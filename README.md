@@ -173,4 +173,68 @@ Identity & Access Management (IAM) is an AWS service that allows us to configure
 
 
 ## Networking in Cloud
+### Route 53
+Route 53 is a cloud domain name system (DNS) service that has servers distributed around the globe used to translates human-readable names like www.google.com into the numeric IP addresses like 74.125.21.147.
 
+* Allows you to register a domain name (or manage an existing)
+* Routes internet traffic to the resources for your domain
+* Checks the health of your resources
+  
+## Elasticity in the Cloud
+One of the main benefits of the cloud is that it allows you to stop guessing about capacity when you need to run your applications.
+
+With elasticity, your servers, databases, and application resources can automatically scale up or scale down based on load.
+
+### EC2 Auto Scaling
+EC2 Auto Scaling is a service that monitors your EC2 instances and automatically adjusts by adding or removing EC2 instances based on conditions you define in order to maintain application availability and provide peak performance to your users.
+
+You can configure EC2 Auto Scaling to send messages Via Simple Notification Services(SNS) when launching or terminating an instance.
+
+### Elastic Load Balancing
+Elastic Load Balancing automatically distributes incoming application traffic across multiple servers.
+
+Elastic Load Balancer is a service that:
+* Balances load between two or more servers
+* Stands in front of a web server
+* Provides redundancy and performance
+
+
+## Messaging in the Cloud
+
+There are often times that users of your applications need to be notified when certain events happen. Notifications, such as text messages or emails can be sent through services in the cloud. 
+
+### Simple Notification Service
+Amazon Simple Notification Service (or SNS) is a cloud service that allows you to send notifications to the users of your applications.
+
+SNS allows you to decouple the notification logic from being embedded in your applications and allows notifications to be published to a large number of subscribers.
+
+### Queues
+A queue is a data structure that holds requests called *messages*. Messages in a queue are commonly processed in order, first in, first out (FIFO).
+
+### Simple Queue Service(SQS)
+Amazon Simple Queue Service (SQS) is a fully managed message queuing service that allows you to integrate queuing functionality in your application. SQS offers two types of message queues: *standard and FIFO.*
+
+## Containers in the Cloud
+Enterprises are adopting container technology at an explosive rate. A container consists of everything an application needs to run: the application itself and its dependencies (e.g. libraries, utilities, configuration files), all bundled into one package.
+
+Each container is an independent component that can run on its own and be moved from environment to environment.
+
+### Elastic Container Service (ECS)
+ECS is an orchestration service used for automating deployment, scaling, and managing of your containerized applications. ECS works well with Docker containers by:
+* launching and stopping Docker containers
+* scaling your applications
+* querying the state of your applications
+
+
+## Logging & Auditing in The Cloud
+Logging provides visibility into your cloud resources and applications.
+
+### Cloud Trail
+Cloud Trail allows you to audit (or review) everything that occurs in your AWS account. Cloud Trail does this by recording all the AWS API calls occurring in your account and delivering a log file to you.
+
+### Cloud Watch
+Cloud Watch is a service that monitors resources and applications that run on AWS by collecting data in the form of logs, metrics, and events.
+
+## Infrastructure as Code
+### Cloud Formation
+AWS Cloud Formation allows you to model your entire infrastructure in a text file template allowing you to provision AWS resources based on the scripts you write.
