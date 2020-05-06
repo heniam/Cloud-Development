@@ -60,4 +60,4 @@ This directory contains some simple unit functions (`units.ts`) and correspondin
 5. Created a new describe block for the "concat" method. `./src/unit-test-examples/units.tests.ts`
 
 
-N.B - Configured Git to user master->stage->dev 
+N.B - Configured Git to user master->stage->dev
