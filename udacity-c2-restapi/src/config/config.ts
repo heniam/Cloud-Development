@@ -7,12 +7,12 @@ export const config = {
     "dialect": "postgres",
     "aws_region": "us-east-1",
     "aws_profile": "default",
-    "aws_media_bucket": "udagramhenokdev"
+    "aws_media_bucket": "udagramheniamdev"
   },
   "prod": {
     "username": "",
     "password": "",
-    "database": "udagram_prod",
+    "database": "udagramheniamdev",
     "host": "",
     "dialect": "postgres"
   }
