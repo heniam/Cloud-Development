@@ -238,3 +238,7 @@ Cloud Watch is a service that monitors resources and applications that run on AW
 ## Infrastructure as Code
 ### Cloud Formation
 AWS Cloud Formation allows you to model your entire infrastructure in a text file template allowing you to provision AWS resources based on the scripts you write.
+
+
+### Amazon Cognito
+Amazon Cognito is an Amazon Web Services (AWS) product that controls user authentication and access for mobile applications on internet-connected devices. It basically takes care of security and authentications for us.
