@@ -21,8 +21,8 @@ router.get('/', async (req: Request, res: Response) => {
 router.get('/:id',
     async (req: Request, res: Response) => {
         const {id} = req.params;
-        const ids = await FeedItem.findByPk(id);
-        res.send(ids);
+        const item = await FeedItem.findByPk(id);
+        res.send(item);
     });
 
 // update a specific resource

@@ -13,7 +13,7 @@ log.txt
 npm-debug.log*
 
 
-/src/config/config.ts
+src/config/config.ts
 
 .idea/
 .ionic/
