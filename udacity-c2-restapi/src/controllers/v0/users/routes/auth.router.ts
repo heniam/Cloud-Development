@@ -28,7 +28,7 @@ function generateJWT(user: User): string {
 }
 
 export function requireAuth(req: Request, res: Response, next: NextFunction) {
-   // return next();
+//    return next();
 
    //turning down an unauthorized user 
     if (!req.headers || !req.headers.authorization){
