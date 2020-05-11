@@ -6,8 +6,8 @@ export const config = {
     "host": "udagramheniamdev.cyf1w3cd5dum.us-east-1.rds.amazonaws.com",
     "dialect": "postgres",
     "aws_region": "us-east-1",
-    "aws_profile": "default",
-    "aws_media_bucket": "udagramheniamdev"
+    "aws_profile": "DEPLOYED",
+    "aws_media_bucket": "udagram-henok-dev"
   },
   "prod": {
     "username": "",
