@@ -240,5 +240,25 @@ Cloud Watch is a service that monitors resources and applications that run on AW
 AWS Cloud Formation allows you to model your entire infrastructure in a text file template allowing you to provision AWS resources based on the scripts you write.
 
 
-### Amazon Cognito
-Amazon Cognito is an Amazon Web Services (AWS) product that controls user authentication and access for mobile applications on internet-connected devices. It basically takes care of security and authentications for us.
+## Amazon Cognito
+**Amazon Cognito** is an Amazon Web Services (AWS) product that controls user authentication and access for mobile applications on internet-connected devices. It basically takes care of security and authentications for us.
+
+
+---
+
+## Automatic Bug Reporting
+[Sentry](https://sentry.io/welcome/) to automatically catch errors and provide a stack trace to developers so we can quickly find and fix bugs!
+
+
+## Testing Concurrency
+[Siege](https://www.joedog.org/siege-manual/) is a lightweight CLI tool to create a large number of concurrent requests to simulate this kind of situation. It basically helps us to make a ton of fake requests and fake users so that we can simulation a situaton we might face in real world. This is used before we deploy unlike the next examples, which we can use in the real world.
+
+*Must be cautious before running these kinds of tests on AWS infrastructure to prevent your local IP from being blocked or your services being suspended.*
+
+
+## Monitoring the State of the System
+
+
+* [CloudFlare ](https://www.cloudflare.com) for improved DNS with monitoring and failover capabilities.
+* [DataDog](https://www.datadoghq.com/product/)for stack performance and health status.
+* AWS also has native tools to help monitor performance **CloudWatch**.
