@@ -48,16 +48,6 @@ import express, { Request, Response } from "express";
   });
 
 
-  // app.get("/filteredimage", async(req: Request, res : Response) => {
-  //      let {image_url} =  req.query;
-  //      if(!image_url){
-  //         return res.status(400).send(`Invalid url or no url`); //throws 400 error code in case there is no url or invalid URL
-  //        }
-  //      //To download the image, send to the client and delete file from server
-  //        filterImageFromURL(image_url).then(filteredpath => {
-  //          res.status(200).sendFile(filteredpath, () => {deleteLocalFiles([filteredpath]);} );
-  //        })
-  //      });
   
   
   app.get( "/", async ( req: Request, res: Response ) => {
