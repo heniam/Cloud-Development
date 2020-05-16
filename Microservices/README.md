@@ -13,7 +13,7 @@
 * Code is easily shared across the project
 * Scoped for worst-case usage across all parts of the application
 
-![image](/microservices-vs-monolith.jpg)
+![image](./microservices-vs-monolith.jpg)
 
 
 ### Considerations for Not Using Microservices
@@ -39,7 +39,7 @@ Utilize resources only for what is necessary for the specific microservice.
 
         
 
-    ![image2](/monovsmicro.png)
+    ![image2](./monovsmicro.png)
 
         Its easier to refactor a Monolith to a Microservice than viseversa. 
 
@@ -57,5 +57,5 @@ Utilize resources only for what is necessary for the specific microservice.
 The Strangler Pattern is a strategy of refactoring code by incrementally replacing components of the codebase and its the most common way to migrate legacy applications.
 
 
-![image2](/StranglerPattern.png)
+![image2](./StranglerPattern.png)
 
