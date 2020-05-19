@@ -54,8 +54,27 @@ Utilize resources only for what is necessary for the specific microservice.
 
 
 ### Divide a Monolith Application Into Microservices
-The Strangler Pattern is a strategy of refactoring code by incrementally replacing components of the codebase and its the most common way to migrate legacy applications.
+**The Strangler Pattern** is a strategy of refactoring code by incrementally replacing components of the codebase and its the most common way to migrate legacy applications.
 
 
 ![image2](./StranglerPattern.png)
 
+
+## Containers
+
+It packages your code with all its dependecies and ship it full. It means that containers are self-contained applications with all the dependencies needed to run; they can be treated as one unit of deployment. 
+
+**Containers are Ephemeral**
+* Containers should be stateless and are expected to be destroyed.
+* Containers are self-contained so deployment is simply swapping out an existing container with a new one.
+* Each container can be running its own versioned software. We resolve the issue where different applications may have different dependencies.
+
+*Ephemeral - a property where a resource is expected to be terminated.*
+
+**Docker** - is a platform that helps us manage the process of creating and managing our containers.
+
+***Docker Image*** -  When we have an application that we want to deploy, we can package it into a Docker Image. The image contains all of your code and dependencies.
+
+***Docker Container*** - is an ephemeral running instance of a Docker Image.
+
+***Dockerfile*** - defines the steps to create a Docker Image.
