@@ -10,7 +10,7 @@
 **Monoliths** are self-contained appplications that are deployed as one unit.
 * Utilize a powerful, more costly machine
 * Codebase is centralized and easy manage
-* Code is easily shared across the projectcd 
+* Code is easily shared across the projectcd
 * Scoped for worst-case usage across all parts of the application
 
 ![image](./img/microservices-vs-monolith.jpg)
@@ -20,28 +20,28 @@
 * ***System Complexity***
 Rather than deploying a single application, we would be deploying multiple modules separately. There is more overhead in setting up projects.
 * ***Network Latency***
-By introducing a network between modules, we have increased latency in application performance and will find it harder to debug our application. 
+By introducing a network between modules, we have increased latency in application performance and will find it harder to debug our application.
 * ***Difficulty with Debugging***
 We can no longer rely on a stack trace or tools that can help us pinpoint where a bug is. We may end up relying on logging to find causes of issues.
 
-In Microservices we can update a specific part when there is an update buth with Monoliths we have to replace the entire application if there is an update. 
+In Microservices we can update a specific part when there is an update buth with Monoliths we have to replace the entire application if there is an update.
 
 #
 #### Microservice Benefits
-* **Scale** - 
-Lean applications that are able to tailor their logic and infrastructure to their specific business needs. More-easily architected for horizontally-scaling. 
-* **Development in Parallel** - 
-Teams can develop and deploy their own codebases. 
-* **Cost Effectiveness** - 
-Utilize resources only for what is necessary for the specific microservice. 
+* **Scale** -
+Lean applications that are able to tailor their logic and infrastructure to their specific business needs. More-easily architected for horizontally-scaling.
+* **Development in Parallel** -
+Teams can develop and deploy their own codebases.
+* **Cost Effectiveness** -
+Utilize resources only for what is necessary for the specific microservice.
 * **Flexibility** - Choose technologies that make the most sense for the team and business.
 
 
-        
+
 
     ![image2](./img/monovsmicro.png)
 
-        Its easier to refactor a Monolith to a Microservice than viseversa. 
+        Its easier to refactor a Monolith to a Microservice than viseversa.
 
 #### Properties of Microservices
 * ***Communication***
@@ -62,7 +62,7 @@ Utilize resources only for what is necessary for the specific microservice.
 #
 ## Containers
 
-It packages your code with all its dependecies and ship it full. It means that containers are self-contained applications with all the dependencies needed to run; they can be treated as one unit of deployment. 
+It packages your code with all its dependecies and ship it full. It means that containers are self-contained applications with all the dependencies needed to run; they can be treated as one unit of deployment.
 
 **Containers are Ephemeral**
 * Containers should be stateless and are expected to be destroyed.
@@ -81,12 +81,12 @@ It packages your code with all its dependecies and ship it full. It means that c
 
 #
 
-## Docker Commands 
+## Docker Commands
 
 ![Docker Commands](./img/Docker_commands_1.png)![Docker Commands](./img/Docker_commands_2.png)
 N.B - docker-exec -it sh
 
-***Container Registry*** - 
+***Container Registry*** -
 A container registry serves as a centralized place for us to store and version our images.
 
 
@@ -112,8 +112,8 @@ A container registry serves as a centralized place for us to store and version o
 * Travis can be used to build and push images to DockerHub
 
 ![Travis](./img/Travis.png)
-# 
-### Alternatives to Travis CI 
+#
+### Alternatives to Travis CI
 
 * **Jenkins** - most flexible but more overhead of setup
 * **CircleCI** - alternative to Travis CI with many competing features
