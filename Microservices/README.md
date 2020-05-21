@@ -10,10 +10,10 @@
 **Monoliths** are self-contained appplications that are deployed as one unit.
 * Utilize a powerful, more costly machine
 * Codebase is centralized and easy manage
-* Code is easily shared across the project
+* Code is easily shared across the projectcd 
 * Scoped for worst-case usage across all parts of the application
 
-![image](./microservices-vs-monolith.jpg)
+![image](./img/microservices-vs-monolith.jpg)
 
 
 ### Considerations for Not Using Microservices
@@ -26,7 +26,7 @@ We can no longer rely on a stack trace or tools that can help us pinpoint where 
 
 In Microservices we can update a specific part when there is an update buth with Monoliths we have to replace the entire application if there is an update. 
 
-
+#
 #### Microservice Benefits
 * **Scale** - 
 Lean applications that are able to tailor their logic and infrastructure to their specific business needs. More-easily architected for horizontally-scaling. 
@@ -39,7 +39,7 @@ Utilize resources only for what is necessary for the specific microservice.
 
         
 
-    ![image2](./monovsmicro.png)
+    ![image2](./img/monovsmicro.png)
 
         Its easier to refactor a Monolith to a Microservice than viseversa. 
 
@@ -57,9 +57,9 @@ Utilize resources only for what is necessary for the specific microservice.
 **The Strangler Pattern** is a strategy of refactoring code by incrementally replacing components of the codebase and its the most common way to migrate legacy applications.
 
 
-![image2](./StranglerPattern.png)
+![image2](./img/StranglerPattern.png)
 
-
+#
 ## Containers
 
 It packages your code with all its dependecies and ship it full. It means that containers are self-contained applications with all the dependencies needed to run; they can be treated as one unit of deployment. 
@@ -78,3 +78,77 @@ It packages your code with all its dependecies and ship it full. It means that c
 ***Docker Container*** - is an ephemeral running instance of a Docker Image.
 
 ***Dockerfile*** - defines the steps to create a Docker Image.
+
+#
+
+## Docker Commands 
+
+![Docker Commands](./img/Docker_commands_1.png)![Docker Commands](./img/Docker_commands_2.png)
+N.B - docker-exec -it sh
+
+***Container Registry*** - 
+A container registry serves as a centralized place for us to store and version our images.
+
+
+#
+## Deployment Pipelines - CI/CD
+*Deployment pipelines simplify how we deploy Docker containers.*
+
+ **Continuous Integration (CI)** - process in which code is tested, built into a Docker image, and deployed to a container registry.
+
+**Continuous Deployment (CD)** - process in which our Docker image is deployed to containers.
+
+![CI/CD](./img/ci-cd.jpg)
+
+* CI/CD allows for a tight feedback loop
+* Bugs are inevitable -- CI/CD helps us identify them in a deployed environment
+* CI/CD makes the pipeline more available
+
+            
+
+### Travis CI
+* Travis is a tool that helps us with the CI process
+* Travis integrates with your application using a YAML file
+* YAML files are often used to specify configurations.
+* Travis can be used to build and push images to DockerHub
+
+![Travis](./img/Travis.png)
+
+### Alternatives to Travis CI 
+
+* **Jenkins** - most flexible but more overhead of setup
+* **CircleCI** - alternative to Travis CI with many competing features
+* **AWS CodeBuild**- integrates easily with other AWS tools
+
+        
+        With CI/CD, if Travis is our CI tool, then Kubernetes is our CD tool    
+
+## Service Orchestration With Kubernetes
+* Orchestration helps us handle complicated workflows in deploying our application
+* Helps us automate our deployment process for continuous deployment
+
+#### Kubernetes
+* A container orchestration system packed with features for automating our application’s deployment
+* Enables us to easily scale our application and ship new code
+#### Pods
+* Containers often need to communicate with one another. It's not uncommon to see a deployment involving a few containers to be deployed.
+
+* Kubernetes **pods** are abstractions of multiple containers and are also ephemeral.
+
+#### Services
+* Applications are often deployed with multiple replicas. This helps *with load balancing and horizontal scaling.
+* Services are an abstraction of a set of pods to expose them through a network*.
+
+*Horizontal Scaling - Handling increased traffic by creating additional replicas so that traffic can be divided across the replicas*
+
+![k8s](./img/k8s.jpg)
+
+#
+## Best Practices 
+#### Reverse Proxy 
+
+![k8s](./img/Reverseproxy.png)
+
+**Reverse Proxy**
+* A single interface that forwards requests on behalf of the client and appears to the client as the origin of the responses.
+* Useful for abstracting multiple microservices to appear as a single resource.
