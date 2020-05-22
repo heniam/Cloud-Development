@@ -104,7 +104,25 @@ A container registry serves as a centralized place for us to store and version o
 * Bugs are inevitable -- CI/CD helps us identify them in a deployed environment
 * CI/CD makes the pipeline more available
 
-            
+### Docker 
+**docker build .** will run the Dockerfile to create an image
+
+**docker images** will print all the available images
+
+
+**docker run {IMAGE_ID}** will run a container with the image
+
+**docker ps** will print all the running containers
+
+**docker kill {CONTAINER_ID}** will terminate the container
+
+**docker exec -it sh** - Attaching to a Container
+
+**docker logs** - viewing logs 
+
+**docker inspect** - View Details of Docker Objects
+
+# 
 
 ### Travis CI
 * Travis is a tool that helps us with the CI process
@@ -143,6 +161,19 @@ A container registry serves as a centralized place for us to store and version o
 
 ![k8s](./img/k8s.jpg)
 
+
+### Commands 
+**kubectl** - provides a wide range of commands to interact with Kubernetes. 
+
+**kubectl get pods** - show the pods in the cluster
+
+**kubectl describe services** - show the services in the cluster
+
+**kubectl cluster-info** - display information about the cluster
+
+ * More commands in the [Kubernetes Cheatsheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
+
+
 #
 ## Best Practices 
 #### Reverse Proxy 
@@ -152,3 +183,26 @@ A container registry serves as a centralized place for us to store and version o
 **Reverse Proxy**
 * A single interface that forwards requests on behalf of the client and appears to the client as the origin of the responses.
 * Useful for abstracting multiple microservices to appear as a single resource.
+  
+
+# 
+## Securing the Microservices
+
+|         |                      |
+| --------|:--------------------:|
+| Ingress | Inbound web traffic  |
+| Egress  | Outbound web traffic |
+
+* AWS *security groups* Enables you to restrict the inbound and outbound traffic for AWS resources.
+  
+* Kubernetes *Ingress and Egress* Enables you to restrict the inbound and outbound traffic for Kubernetes resources.
+
+**Horizontal Pod Autoscaler** - 
+A deployment feature that allows additional pods to be created when a CPU usage threshold is reached.
+
+    kubectl autoscale deployment <NAME> --cpu-percent=<CPU_PERCENTAGE>                --min=<MIN_REPLICAS>
+    --max=<MAX_REPLICAS>
+
+**Liveness Probe** - A monitoring activity that occurs at scheduled intervals to ping a health check API endpoint to validate that the application is in a healthy state.
+
+**Resilience** - 	The property of an application to handle and recover from failures.
