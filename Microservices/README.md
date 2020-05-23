@@ -10,7 +10,7 @@
 **Monoliths** are self-contained appplications that are deployed as one unit.
 * Utilize a powerful, more costly machine
 * Codebase is centralized and easy manage
-* Code is easily shared across the projectcd
+* Code is easily shared across the project
 * Scoped for worst-case usage across all parts of the application
 
 ![image](./img/microservices-vs-monolith.jpg)
@@ -24,7 +24,7 @@ By introducing a network between modules, we have increased latency in applicati
 * ***Difficulty with Debugging***
 We can no longer rely on a stack trace or tools that can help us pinpoint where a bug is. We may end up relying on logging to find causes of issues.
 
-In Microservices we can update a specific part when there is an update buth with Monoliths we have to replace the entire application if there is an update.
+In Microservices we can update a specific part when there is an update but with Monoliths we have to replace the entire application if there is an update.
 
 #
 #### Microservice Benefits
@@ -35,7 +35,6 @@ Teams can develop and deploy their own codebases.
 * **Cost Effectiveness** -
 Utilize resources only for what is necessary for the specific microservice.
 * **Flexibility** - Choose technologies that make the most sense for the team and business.
-
 
 
 
