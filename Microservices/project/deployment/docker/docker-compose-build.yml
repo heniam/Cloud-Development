@@ -1,0 +1,18 @@
+version: '3'
+services:
+  reverseproxy:
+    build:
+      context: ./
+    image: heniam/reverseproxy
+  backend-user:
+    build:
+      context: ../../api-user
+    image: heniam/api-user
+  backend-feed:
+    build:
+      context: ../../api-feed
+    image: heniam/api-feed
+  front-end:
+    build:
+      context: ../../frontend
+    image: heniam/frontend
