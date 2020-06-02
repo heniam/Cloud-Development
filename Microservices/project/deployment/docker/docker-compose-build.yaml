@@ -6,13 +6,13 @@ services:
     image: heniam/reverseproxy
   backend-user:
     build:
-      context: ../../api-user
-    image: heniam/api-user
+      context: ../../udagram-api-user
+    image: heniam/udagram-api-user
   backend-feed:
     build:
-      context: ../../api-feed
-    image: heniam/api-feed
+      context: ../../udagram-api-feed
+    image: heniam/udagram-api-feed
   front-end:
     build:
-      context: ../../frontend
-    image: heniam/frontend
+      context: ../../udagram-frontend
+    image: heniam/udagram-frontend
