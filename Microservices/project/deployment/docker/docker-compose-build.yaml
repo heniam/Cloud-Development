@@ -1,0 +1,18 @@
+version: '3'
+services:
+  reverseproxy:
+    build:
+      context: ./
+    image: heniam/reverseproxy
+  backend-user:
+    build:
+      context: ../../udagram-api-user
+    image: heniam/udagram-api-user
+  backend-feed:
+    build:
+      context: ../../udagram-api-feed
+    image: heniam/udagram-api-feed
+  front-end:
+    build:
+      context: ../../udagram-frontend
+    image: heniam/udagram-frontend
