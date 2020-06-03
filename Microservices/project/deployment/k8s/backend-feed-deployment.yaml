@@ -15,7 +15,7 @@ spec:
         service: backend-feed
     spec:
       containers:
-      - image: heniam/api-feed
+      - image: heniam/udagram-api-feed
         name: backend-feed
         imagePullPolicy: Always  
         resources:

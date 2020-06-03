@@ -16,7 +16,7 @@ spec:
         api: external        
     spec:
       containers:
-      - image: heniam/frontend
+      - image: heniam/udagram-frontend
         name: frontend
         imagePullPolicy: Always          
         ports:

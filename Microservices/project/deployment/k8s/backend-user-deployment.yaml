@@ -15,7 +15,7 @@ spec:
         service: backend-user
     spec:
       containers:
-      - image: heniam/api-user
+      - image: heniam/udagram-api-user
         name: backend-user 
         imagePullPolicy: Always  
         resources:
