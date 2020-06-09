@@ -1,0 +1,14 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: udagram-micro
+  region: us-east-1
+
+nodeGroups:
+  - name: udagram-micro
+    labels: { role: node-role }
+    instanceType: t3.micro
+    desiredCapacity: 2
+    privateNetworking: true
+  

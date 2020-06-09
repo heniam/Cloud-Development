@@ -15,4 +15,4 @@ services:
   front-end:
     build:
       context: ../../udagram-frontend
-    image: heniam/udagram-frontend
+    image: heniam/udagram-frontend:local
