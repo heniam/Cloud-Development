@@ -73,3 +73,10 @@ pay for what you use.
 
 * **Proxy** - passes all request information to a Lambda function. Easier to use.
 * **Non-proxy** - allows to transform incoming request using **Velocity Template Language**
+
+
+
+
+
+
+### DynamoDB
