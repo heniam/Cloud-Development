@@ -70,14 +70,26 @@ pay for what you use.
     ![Private End point](./img/private.png )
 
 N.B - Edge optimazed is better if our API is to be used by geographically distributed group of users.
+
 #### Lambda integration modes
 
 * **Proxy** - passes all request information to a Lambda function. Easier to use.
 * **Non-proxy** - allows to transform incoming request using **Velocity Template Language**
 
 
-
-
-
-
 ### DynamoDB
+  * NoSQL database 
+      * key-value store - every item should have key 
+      * Document datastore - every item can be a complex document
+  * Scalable Database 
+  * Low latency 
+  * Serverless 
+  * High Avaliablity 
+
+### DynamoDB Features 
+  * Schemaless 
+  * Query via API
+  * ACID Transaction (**A**tomicity **C**onsistency **I**solation **D**urability)
+  * Update Streams
+  * Global Tables 
+  * Backups 
