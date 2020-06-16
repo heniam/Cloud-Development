@@ -93,3 +93,5 @@ N.B - Edge optimazed is better if our API is to be used by geographically distri
   * Update Streams
   * Global Tables 
   * Backups 
+
+ ![DynamoDB](./img/dynamodb.png )
