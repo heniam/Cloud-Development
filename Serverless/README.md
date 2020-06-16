@@ -69,6 +69,7 @@ pay for what you use.
    ![Regional End point](./img/regional.png )
     ![Private End point](./img/private.png )
 
+N.B - Edge optimazed is better if our API is to be used by geographically distributed group of users.
 #### Lambda integration modes
 
 * **Proxy** - passes all request information to a Lambda function. Easier to use.
