@@ -95,3 +95,17 @@ N.B - Edge optimazed is better if our API is to be used by geographically distri
   * Backups 
 
  ![DynamoDB](./img/dynamodb.png )
+
+### DynamoDB Capacity Modes
+
+DynamoDB has two capacity modes:
+
+* **Provisioned capacity** - we need to define the maximum amount of read/write requests DynamoDB can handle. The higher the limit we set, the more we have to pay per month. Requests are throttled if we go above the specified limit.
+  
+* **On-Demand** - DynamoDB will handle as many requests as we send, and we pay per-request. Can be more expensive comparing to Provisioned capacity, but is better for applications with unpredictable traffic patterns.
+
+N.B - Every item in DynamoDB should have a partition key.
+
+
+
+### Serverless Framework
