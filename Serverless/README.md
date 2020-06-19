@@ -108,4 +108,31 @@ N.B - Every item in DynamoDB should have a partition key.
 
 
 
-### Serverless Framework
+### Serverless 
+* Standardized way of deploying an application
+* create necessary resources
+* Manage Applications - Remove applications, call functions, ru application locally 
+  
+#### Serverless Providers
+  * **Serverless** framework - its the most developed 
+  * **Zappa** is another serverless app and only supports Python.
+  * **Serverless Application Model(SAM)** - from AWS, CloudFormation extention.
+  * **Claudia.js** - it only supports Node.js and AWS. 
+
+#### Why Serverless Framework
+  * Its the most popular framework
+  * Dozons of plugins 
+  * Huge Community 
+  * It can be used with AWS, Azure, Google Cloud, Kubeless, IBM OpenWhisk and etc.
+  * It supports many programming languages as well.
+  
+### YAML
+  * Common configuration file format 
+  * Superset of JSON, yaml is more concise format 
+  * Indentation with spaces like phyton 
+  
+  
+   ![yamlvsjson](./img/yamlvsjson.png )
+
+  * [Resource to convert from YAML code to JSON and vice versa](https://www.json2yaml.com/)
+  *  [Serverless Plugins](https://www.serverless.com/plugins/)
