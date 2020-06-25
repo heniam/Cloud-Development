@@ -134,5 +134,7 @@ N.B - Every item in DynamoDB should have a partition key.
   
    ![yamlvsjson](./img/yamlvsjson.png )
 
+   
+
   * [Resource to convert from YAML code to JSON and vice versa](https://www.json2yaml.com/)
   *  [Serverless Plugins](https://www.serverless.com/plugins/)
