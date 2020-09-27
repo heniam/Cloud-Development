@@ -35,6 +35,8 @@ pay for what you use.
   
 ![FaaS](./img/faas.png)
 
+* we can directly configure Memory and Timeout for an AWS Lambda function.
+
 ### Lambda function vs AWS Lambda
 *  AWS Lambda - is a computing service that runs code in response to events from Amazon Web Services.
   
