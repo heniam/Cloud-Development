@@ -46,8 +46,8 @@ pay for what you use.
 * At most 3GB of memory per execution
 * Functions can run no more that 15 minutes
 * Can only write files to /tmp folder
-* Limited number of concurrent executions
-* Event size up to 6 MB
+* Limited number of concurrent executions - (limit can be lifted!)
+* Event size up to 6 MB - (256 Kb Asynchronous)
 
 ### Error Handling 
 ![error handling](./img/errorhandle.png)
