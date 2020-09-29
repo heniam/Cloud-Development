@@ -81,7 +81,7 @@ N.B - Edge optimazed is better if our API is to be used by geographically distri
 
 ### DynamoDB
   * NoSQL database 
-      * key-value store - every item should have key 
+      * Key-value store - every item should have key 
       * Document datastore - every item can be a complex document
   * Scalable Database 
   * Low latency 
