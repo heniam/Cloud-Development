@@ -53,6 +53,7 @@ pay for what you use.
 ![error handling](./img/errorhandle.png)
   * **Request/response method**: If there's an error in the function, then it will return immediately to the caller, which can process the error from the Lambda function.
   * **Async method:** Instead of returning an error to the user, AWSLambda will return HTTP 202 code to the user and it will store a request into an internal queue. Additionally, it will try to call the Lambda function up to 3 times. If all of those times result into an error, then it will store the event into a "dead-letter queue", which stores all the events that the Lambda function failed to process.
+  
 ### Serverless Benefits
 
 |     Pros    |      Cons        |
