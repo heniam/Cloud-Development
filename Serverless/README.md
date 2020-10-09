@@ -43,6 +43,7 @@ pay for what you use.
 *  Lambda function - is a single function connected to an event source running in AWS Lambda.
 
 ### [AWS Lambda limitations ](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html)
+
 * At most 3GB of memory per execution
 * Functions can run no more that 15 minutes
 * Can only write files to /tmp folder
