@@ -132,6 +132,7 @@ N.B - Every item in DynamoDB should have a partition key.
   * It can be used with AWS, Azure, Google Cloud, Kubeless, IBM OpenWhisk and etc.
   * It supports many programming languages as well.
   
+
 ### YAML
   * Common configuration file format 
   * Superset of JSON, yaml is more concise format 
@@ -144,3 +145,67 @@ N.B - Every item in DynamoDB should have a partition key.
 
   * [Resource to convert from YAML code to JSON and vice versa](https://www.json2yaml.com/)
   *  [Serverless Plugins](https://www.serverless.com/plugins/)
+
+#
+
+### Serveless Framwork Concept 
+
+![Serverless Framwork](./img/Serverless-framework.png )
+
+### Serverless Project Structure
+* /node_modules
+   * plugins, prod. and dev. dependencies
+* /src
+  * function.js
+* serverless.yml
+    * Provider - provider specific config
+    * Functions - functions in our service
+    * Plugins - plugins to extend Serveless Framework (https://github.com/serverless/plugins)
+    * Resources - additional cloud resources  
+* package.json
+
+* package-lock.json
+
+
+### Serveless.yml 
+
+![Serverless.yml](./img/serverless.png )
+
+
+### Supported events in Serverless 
+* **API GATEWAY** -  REST/WebSocket API
+* **SQS** - Simple Queue Service
+* **Alexa** - for voice applications 
+* **CloudWatch Events** - scheduling events 
+* **CloudWatch Logs** - process log events
+* **Kinesis,DynamoDB** - process a stream of updates
+
+### Serverless in a Nutshell 
+![Serveless](./img/servelessnutshell.png )
+
+
+### CloudFormation 
+  * Cloudformation is a service from AWS that allows us to create and manage AWS resources. 
+* its Declerative 
+* CloudFormation allows us to
+  * Write YAML/JSON config file
+  * Changes state of AWS resources
+  * Version control the infrastructure
+  
+* it's free you only pay for created resources.
+
+
+        CloudFormation is Amazon's version of Terraform.
+
+  ![Cloudformation](./img/cloudformation.png )
+
+  ![Cloudformation Resources](./img/cloudformationresources.png )
+
+
+  ### Old DynamoDB Terminalogy in Cloudformation
+  * **Partition** Key - used to be **HASH** key 
+  * **Sort** Key - used to be **Range** key 
+
+  * This old terminalogies are still used in linbraries and cloudformation
+  
+  AWS documentation provides reference for all resource types CloudFormation support: [AWS Resource and Property Types Reference](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html)

@@ -1,4 +1,4 @@
-# Specifies intentionally untracked files to ignore when using Git
+-# Specifies intentionally untracked files to ignore when using Git
 # http://git-scm.com/docs/gitignore
 
 *~
@@ -11,6 +11,9 @@ log.txt
 *.sublime-workspace
 .vscode/
 npm-debug.log*
+# package directories
+node_modules
+jspm_packages
 
 src/config/config.ts
 .idea/
@@ -31,6 +34,8 @@ plugins/ios.json
 $RECYCLE.BIN/
 postgres_dev/
 logfile
+# Serverless directories
+.serverless
 
 .DS_Store
 Thumbs.db
@@ -41,3 +46,5 @@ venv/
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
+# Webpack directories
+.webpack
