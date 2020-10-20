@@ -209,3 +209,11 @@ N.B - Every item in DynamoDB should have a partition key.
   * This old terminalogies are still used in linbraries and cloudformation
   
   AWS documentation provides reference for all resource types CloudFormation support: [AWS Resource and Property Types Reference](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html)
+
+
+  ### Using Serverless Framework 
+  ![Using Serverless](./img/usingServerless.png )
+
+  * when we run **serveless/sls deply -v** serveless will convert our serverless YAML to CloudFormation template and upload it to CloudFormation to deploy our application.
+  
+  * Configure serverless to use the AWS credentials :  *sls config credentials --provider aws --key YOUR_ACCESS_KEY --secret YOUR_SECRET_KEY --profile serverless*
