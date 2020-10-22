@@ -9,19 +9,26 @@ const groupsTable = process.env.GROUPS_TABLE
 export const handler: APIGatewayProxyHandler = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
   console.log('Processing event: ', event)
 
-  const result = await docClient.scan({
-    TableName: groupsTable
-  }).promise()
+  try{
+    const result = await docClient.scan({
+      TableName: groupsTable
+    }).promise()
 
-  const items = result.Items
+    const items = result.Items
 
-  return {
-    statusCode: 200,
-    headers: {
-      'Access-Control-Allow-Origin': '*'
-    },
-    body: JSON.stringify({
-      items
-    })
+    return {
+      statusCode: 200,
+      headers:{
+        'Access-Control-Allow-Origin':'*'
+      },
+      body: JSON.stringify({
+          items
+      })
+    }
+  } catch(e){
+    console.log('DEBUG ERROR');
+    console.log(e);
+    
   }
+ 
 }

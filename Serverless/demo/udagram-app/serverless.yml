@@ -15,11 +15,6 @@ provider:
     GROUPS_TABLE: Groups-${self:provider.stage}
 
   iamRoleStatements:
-      - Effect: "Allow"
-        Action:
-            - "cloudformation:DescribeStackResource"
-        Resource: "*"
-
       - Effect: Allow
         Action: 
           - dynamodb:Scan
