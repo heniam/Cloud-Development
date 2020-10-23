@@ -9,8 +9,8 @@ Serverless: Using configuration:
 }
 Serverless: Removing /Users/heniam/Documents/GitHub/Cloud-Dev/Serverless/demo/udagram-app/.webpack
 Serverless: Bundling with Webpack...
-Time: 957ms
-Built at: 10/22/2020 2:44:43 PM
+Time: 7975ms
+Built at: 10/23/2020 5:42:46 PM
                            Asset      Size  Chunks                   Chunk Names
     src/lambda/http/getGroups.js   1.5 KiB       0  [emitted]        src/lambda/http/getGroups
 src/lambda/http/getGroups.js.map  6.15 KiB       0  [emitted] [dev]  src/lambda/http/getGroups
@@ -18,28 +18,10 @@ Entrypoint src/lambda/http/getGroups = src/lambda/http/getGroups.js src/lambda/h
 [0] external "aws-sdk" 42 bytes {0} [built]
 [1] ./src/lambda/http/getGroups.ts 715 bytes {0} [built]
 [2] external "source-map-support/register" 42 bytes {0} [built]
-Serverless: Zip service: /Users/heniam/Documents/GitHub/Cloud-Dev/Serverless/demo/udagram-app/.webpack/service [44 ms]
+Serverless: Zip service: /Users/heniam/Documents/GitHub/Cloud-Dev/Serverless/demo/udagram-app/.webpack/service [243 ms]
 Serverless: Packaging service...
 Serverless: Remove /Users/heniam/Documents/GitHub/Cloud-Dev/Serverless/demo/udagram-app/.webpack
-Serverless: Uploading CloudFormation file to S3...
-Serverless: Uploading artifacts...
-Serverless: Uploading service serverless-udagram-app.zip file to S3 (3.64 KB)...
-Serverless: Validating template...
-Serverless: Updating Stack...
-Serverless: Checking Stack update progress...
-CloudFormation - UPDATE_IN_PROGRESS - AWS::CloudFormation::Stack - serverless-udagram-app-dev
-CloudFormation - UPDATE_IN_PROGRESS - AWS::IAM::Role - IamRoleLambdaExecution
-CloudFormation - UPDATE_COMPLETE - AWS::IAM::Role - IamRoleLambdaExecution
-CloudFormation - UPDATE_IN_PROGRESS - AWS::Lambda::Function - GetGroupsLambdaFunction
-CloudFormation - UPDATE_COMPLETE - AWS::Lambda::Function - GetGroupsLambdaFunction
-CloudFormation - CREATE_IN_PROGRESS - AWS::ApiGateway::Deployment - ApiGatewayDeployment1603392277510
-CloudFormation - CREATE_IN_PROGRESS - AWS::ApiGateway::Deployment - ApiGatewayDeployment1603392277510
-CloudFormation - CREATE_COMPLETE - AWS::ApiGateway::Deployment - ApiGatewayDeployment1603392277510
-CloudFormation - UPDATE_COMPLETE_CLEANUP_IN_PROGRESS - AWS::CloudFormation::Stack - serverless-udagram-app-dev
-CloudFormation - DELETE_IN_PROGRESS - AWS::ApiGateway::Deployment - ApiGatewayDeployment1603392116468
-CloudFormation - DELETE_COMPLETE - AWS::ApiGateway::Deployment - ApiGatewayDeployment1603392116468
-CloudFormation - UPDATE_COMPLETE - AWS::CloudFormation::Stack - serverless-udagram-app-dev
-Serverless: Stack update finished...
+Serverless: Service files not changed. Skipping deployment...
 Service Information
 service: serverless-udagram-app
 stage: dev
@@ -49,13 +31,13 @@ resources: 13
 api keys:
   None
 endpoints:
-  GET - https://s0xju3yxtc.execute-api.us-east-1.amazonaws.com/dev/groups
+  GET - https://lr5vg00s48.execute-api.us-east-1.amazonaws.com/dev/groups
 functions:
   GetGroups: serverless-udagram-app-dev-GetGroups
 layers:
   None
 
 Stack Outputs
-GetGroupsLambdaFunctionQualifiedArn: arn:aws:lambda:us-east-1:985214855586:function:serverless-udagram-app-dev-GetGroups:5
-ServiceEndpoint: https://s0xju3yxtc.execute-api.us-east-1.amazonaws.com/dev
-ServerlessDeploymentBucketName: serverless-udagram-app-d-serverlessdeploymentbuck-1m1iy1gbx85g7
+GetGroupsLambdaFunctionQualifiedArn: arn:aws:lambda:us-east-1:985214855586:function:serverless-udagram-app-dev-GetGroups:6
+ServiceEndpoint: https://lr5vg00s48.execute-api.us-east-1.amazonaws.com/dev
+ServerlessDeploymentBucketName: serverless-udagram-app-d-serverlessdeploymentbuck-uz3uy9rjxo95
