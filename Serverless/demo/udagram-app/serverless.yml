@@ -13,6 +13,7 @@ provider:
 
   environment: 
     GROUPS_TABLE: Groups-${self:provider.stage}
+    SLS_DEBUG: "*"
 
   iamRoleStatements:
       - Effect: Allow
@@ -27,7 +28,7 @@ functions:
       - http:
           method: get
           path: groups
-          cors : true
+          cors: true
 
 
 resources:
