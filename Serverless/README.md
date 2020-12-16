@@ -216,4 +216,52 @@ N.B - Every item in DynamoDB should have a partition key.
 
   * when we run **serveless/sls deply -v** serveless will convert our serverless YAML to CloudFormation template and upload it to CloudFormation to deploy our application.
   
-  * Configure serverless to use the AWS credentials :  *sls config credentials --provider aws --key YOUR_ACCESS_KEY --secret YOUR_SECRET_KEY --profile serverless*
+  * Configure serverless to use the AWS credentials :
+   
+         sls config credentials    --provider aws --key YOUR_ACCESS_KEY --secret YOUR_SECRET_KEY --profile serverless*
+        
+  
+
+  ### Composite key
+
+A composite key in DynamoDB consists of two elements
+
+* Partition key - what partition to write item to
+* Sort key - to sort elements with the same partition key
+  
+*Together - uniquely identify an item, meaning there can be no two items in a table with the same values of composite key.*
+
+
+## EVENT PROCESSING 
+
+### Image Upload files
+
+ we can use the code snippet below to generate a signed url 
+    
+
+     const s3 = new AWS.S3({
+       signatureVersion: 'v4' // Use Sigv4 algorithm
+     })
+     const presignedUrl = s3.getSignedUrl('putObject', { // The URL will allow to perform the PUT operation
+       Bucket: 's3-bucket-name', // Name of an S3 bucket
+       Key: 'object-id', // id of an object this URL allows access to
+       Expires: '300'  // A URL is only valid for 5 minutes
+     })
+
+  ## Cloud Formation Reference 
+
+  ![Cloud Formation Reference](./img/cf-ref.png )
+
+
+
+  ![Cloud Formation Reference](./img/CF-REFF.png )
+
+
+  
+
+
+  DEMO - we will return a presigned url when its added to a dynamo db 
+
+  generate a presigned url when an image is created -- return this URL from a lambda function 
+
+  use this URL to upload an image
