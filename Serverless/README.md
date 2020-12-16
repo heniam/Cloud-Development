@@ -259,9 +259,3 @@ A composite key in DynamoDB consists of two elements
 
   
 
-
-  DEMO - we will return a presigned url when its added to a dynamo db 
-
-  generate a presigned url when an image is created -- return this URL from a lambda function 
-
-  use this URL to upload an image
