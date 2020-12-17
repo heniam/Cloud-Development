@@ -258,4 +258,10 @@ A composite key in DynamoDB consists of two elements
 
 
   
+For the Demo we used the post method doesnt have any validations to vlalidate incoming requests. We will use JSON schema to validate it.
 
+we i wll insttall -- 
+     serverless-aws-documentation serverless-reqvalidator-plugin
+then 
+
+![Validation](./img/validation.png )
