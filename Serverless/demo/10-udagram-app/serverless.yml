@@ -13,6 +13,8 @@ plugins:
 provider:
   name: aws
   runtime: nodejs12.x
+
+
   stage: ${opt:stage, 'dev'}
   region: ${opt:region, 'us-east-1'}
 
@@ -28,10 +30,7 @@ provider:
         - dynamodb:Scan
         - dynamodb:PutItem
       Resource: arn:aws:dynamodb:${self:provider.region}:*:table/${self:provider.environment.GROUPS_TABLE}
-    - Effect: "Allow"
-      Action:
-        - "cloudformation:DescribeStackResource"
-      Resource: "*"
+    
 
 custom:
   webpack:
@@ -42,17 +41,16 @@ custom:
       info:
         version: v1.0.0
         title: Udagram API
-        description: Serverless application for image sharing
+        description: Serverless application for images sharing
     models:
       - name: GroupRequest
         contentType: application/json
-        schema: $(file(models/create-group-request.json))
+        schema: ${file(models/create-group-request.json)}
 
 functions:
-
   GetGroups:
     handler: src/lambda/http/getGroups.handler
-    events: 
+    events:
       - http:
           method: get
           path: groups
@@ -60,7 +58,7 @@ functions:
 
   CreateGroup:
     handler: src/lambda/http/createGroup.handler
-    events: 
+    events:
       - http:
           method: post
           path: groups
@@ -69,10 +67,9 @@ functions:
           documentation:
             summary: Create a new group
             description: Create a new group
-            requestModel:
-              'application/json': GroupRequest
-        
-
+            requestModels:
+              'application/json': GroupRequest
+  
 resources:
   Resources:
 
