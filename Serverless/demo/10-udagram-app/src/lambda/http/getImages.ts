@@ -16,56 +16,54 @@ export const handler: APIGatewayProxyHandler = async (event: APIGatewayProxyEven
 
    const validGroupId = await groupExists(groupId)
 
-   if(!validGroupId) {
-       return {
-           statusCode: 404,
-           headers: {
-            'Access-Control-Allow-Origin':'*'
-           },
-           body: JSON.stringify({
-               error: 'Group does not exist'
-           })
-       }
-   }
-
-   const images = await getImagesPerGroup(groupId)
-
-
+   if (!validGroupId) {
     return {
-      statusCode: 200,
-      headers:{
-        'Access-Control-Allow-Origin':'*'
+      statusCode: 404,
+      headers: {
+        'Access-Control-Allow-Origin': '*'
       },
       body: JSON.stringify({
-          items : images
+        error: 'Group does not exist'
       })
     }
- 
+  }
+
+  const images = await getImagesPerGroup(groupId)
+
+  return {
+    statusCode: 201,
+    headers: {
+      'Access-Control-Allow-Origin': '*'
+    },
+    body: JSON.stringify({
+      items: images
+    })
+  }
 }
 
-async function groupExists(groupId: string){
+async function groupExists(groupId: string) {
     const result = await docClient
       .get({
-          TableName: groupsTable,
-          Key: {
-              id: groupId
-          }
+        TableName: groupsTable,
+        Key: {
+          id: groupId
+        }
       })
       .promise()
-      console.log('Get groups : ', result)
-      return !!result.Item
-      
-}
-
-async function getImagesPerGroup(groupId: string) {
+  
+    console.log('Get group: ', result)
+    return !!result.Item
+  }
+  
+  async function getImagesPerGroup(groupId: string) {
     const result = await docClient.query({
-        TableName: imagesTable,
-        KeyConditionExpression: 'grupId = :groupId',
-        ExpressionAttributeValues: {
-            ':groupId': groupId
-        },
-        ScanIndexForward: false
+      TableName: imagesTable,
+      KeyConditionExpression: 'groupId = :groupId',
+      ExpressionAttributeValues: {
+        ':groupId': groupId
+      },
+      ScanIndexForward: false
     }).promise()
-
+  
     return result.Items
-}
+  }
