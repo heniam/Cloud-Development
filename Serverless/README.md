@@ -310,3 +310,21 @@ then
 
 When DynamoDb puts the data its given it hashes it and puts on the tables. 
 
+
+
+![query to DynamoDB with Node.js](./img/Nodejs_Dynamo.png )
+
+#
+### DynamoDB supports two indexes types:
+
+* Local secondary index (LSI):
+
+   *   Like an additional sort key
+    Allows to sort items by a different attribute
+    Added on the data in a table
+
+* Global secondary index (GSI) --(very fast and efficent and cost effective)
+
+  * Allows to define a new partition key for the same data
+Allows to define a new partition and sort key for the same data
+Creates copy of the data in a table (data is available via GSI after some delay)

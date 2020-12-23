@@ -72,4 +72,7 @@ When DynamoDb puts the data its given it hashes it and puts on the tables.
   * title
   * imageUrl
    
-   ![Validation](./img_1.png )
+   ![Image Query DB](./img_1.png )
+
+
+      ![Image](./img_2.png )
