@@ -232,31 +232,6 @@ A composite key in DynamoDB consists of two elements
 *Together - uniquely identify an item, meaning there can be no two items in a table with the same values of composite key.*
 
 
-## EVENT PROCESSING 
-
-### Image Upload files
-
- we can use the code snippet below to generate a signed url 
-    
-
-     const s3 = new AWS.S3({
-       signatureVersion: 'v4' // Use Sigv4 algorithm
-     })
-     const presignedUrl = s3.getSignedUrl('putObject', { // The URL will allow to perform the PUT operation
-       Bucket: 's3-bucket-name', // Name of an S3 bucket
-       Key: 'object-id', // id of an object this URL allows access to
-       Expires: '300'  // A URL is only valid for 5 minutes
-     })
-
-  ## Cloud Formation Reference 
-
-  ![Cloud Formation Reference](./img/cf-ref.png )
-
-
-
-  ![Cloud Formation Reference](./img/CF-REFF.png )
-
-
 ## Requests Validation
 
 * You can read more about requests validation with API Gateway in the [official documentation](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-method-request-validation.html)
@@ -328,3 +303,33 @@ When DynamoDb puts the data its given it hashes it and puts on the tables.
   * Allows to define a new partition key for the same data
 Allows to define a new partition and sort key for the same data
 Creates copy of the data in a table (data is available via GSI after some delay)
+
+
+
+#
+
+
+## EVENT PROCESSING 
+
+### Image Upload files
+
+ we can use the code snippet below to generate a signed url 
+    
+
+     const s3 = new AWS.S3({
+       signatureVersion: 'v4' // Use Sigv4 algorithm
+     })
+     const presignedUrl = s3.getSignedUrl('putObject', { // The URL will allow to perform the PUT operation
+       Bucket: 's3-bucket-name', // Name of an S3 bucket
+       Key: 'object-id', // id of an object this URL allows access to
+       Expires: '300'  // A URL is only valid for 5 minutes
+     })
+
+  ## Cloud Formation Reference 
+
+  ![Cloud Formation Reference](./img/cf-ref.png )
+
+
+
+  ![Cloud Formation Reference](./img/CF-REFF.png )
+

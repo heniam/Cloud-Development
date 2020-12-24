@@ -75,4 +75,13 @@ When DynamoDb puts the data its given it hashes it and puts on the tables.
    ![Image Query DB](./img_1.png )
 
 
-      ![Image](./img_2.png )
+    ![Image](./img_2.png )
+
+
+### Image Upload 
+* We are going to implement 
+  * Images upload to S3
+  * Notify other users when a file is uploaded 
+    * WebSockets 
+    * Use S3 Notification 
+  * Full-text search  

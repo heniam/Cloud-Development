@@ -2,7 +2,6 @@ import { APIGatewayProxyEvent, APIGatewayProxyResult, APIGatewayProxyHandler } f
 import 'source-map-support/register'
 import * as AWS  from 'aws-sdk'
 
-
 const docClient = new AWS.DynamoDB.DocumentClient()
 
 const imagesTable = process.env.IMAGES_TABLE

@@ -8,7 +8,6 @@ const groupsTable = process.env.GROUPS_TABLE
 const imagesTable = process.env.IMAGES_TABLE
 
 export const handler: APIGatewayProxyHandler = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
-
   console.log('Caller event', event)
   const groupId = event.pathParameters.groupId
   const validGroupId = await groupExists(groupId)
@@ -25,7 +24,9 @@ export const handler: APIGatewayProxyHandler = async (event: APIGatewayProxyEven
     }
   }
 
-  const images = await getImagesPerGroup(groupId)
+const imageId = uuid.v4()
+const newItem = await createImage(groupId, imageId, event)
+
 
   return {
     statusCode: 201,
@@ -33,7 +34,7 @@ export const handler: APIGatewayProxyHandler = async (event: APIGatewayProxyEven
       'Access-Control-Allow-Origin': '*'
     },
     body: JSON.stringify({
-      items: images
+        newItem: newItem
     })
   }
 }
@@ -52,15 +53,25 @@ async function groupExists(groupId: string) {
   return !!result.Item
 }
 
-async function getImagesPerGroup(groupId: string) {
-  const result = await docClient.query({
-    TableName: imagesTable,
-    KeyConditionExpression: 'groupId = :groupId',
-    ExpressionAttributeValues: {
-      ':groupId': groupId
-    },
-    ScanIndexForward: false
-  }).promise()
 
-  return result.Items
-}
+async function createImage(groupId: string, imageId: string, event: any) {
+    const timestamp = new Date().toISOString()
+    const newImage = JSON.parse(event.body)
+  
+    const newItem = {
+      groupId,
+      timestamp,
+      imageId,
+      ...newImage,
+    }
+    console.log('Storing new item: ', newItem)
+  
+    await docClient
+      .put({ 
+        TableName: imagesTable,
+        Item: newItem
+      })
+      .promise()
+  
+    return newItem
+  }
