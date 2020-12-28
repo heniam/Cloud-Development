@@ -122,8 +122,19 @@ When DynamoDb puts the data its given it hashes it and puts on the tables.
     * Lambda should have write permissions to S3
       * Won't write to the bucket it self.
       * Wont generate proper URL without correct permissions.
-  * Pros- This is the serverless approach 
+  * Pros - This is the serverless approach 
     * No need to manage our infrastructure 
     * No need to process file uploads
   ![Image](./img_6.png )
     
+
+**Here is a code snippet that can be used to generate a presigned URL:**
+
+          const s3 = new AWS.S3({
+            signatureVersion: 'v4' // Use Sigv4 algorithm
+          })
+          const presignedUrl = s3.getSignedUrl('putObject', { // The URL will allow to perform the PUT operation
+            Bucket: 's3-bucket-name', // Name of an S3 bucket
+            Key: 'object-id', // id of an object this URL allows access to
+            Expires: '300'  // A URL is only valid for 5 minutes
+          })
