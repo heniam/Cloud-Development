@@ -491,4 +491,47 @@ Creates copy of the data in a table (data is available via GSI after some delay)
 ![two databses](./img/2db.png)
 
 
-### Synchronize DynamoDB and Elasticsearch
+### Data Streaming Services 
+  * **Apache Kafka** - open source
+    * Managed version of Apache Kafka
+    * Allows to store any streaming data
+  * **Kinesis** - AWS source 
+    * Separate data stream service
+    * Allows to store any streaming data
+    * Similar to Kafka (Open Source data streaming platform)
+  ![Kinesis](./img/Kinesis.png)
+  * **DynamoDB**
+    * Provides a stream of all updates applied to DynamoDB tables
+    * Only contains operations performed on DynamoDB tables
+  ![DynamoDB](./img/DynamoDB-DataStream.png)
+#### Data Stream 
+  * A stream of binary records 
+  * Like a queue 
+    * Unlike a queue, each record can be read multiple times
+  * Two types of users 
+    * Consumers - read records 
+    * Producers - add new records 
+#### Scaling a Data Stream
+  * Should be able to scale 
+    * Process millions and millions of messages 
+  *  The solution is to scaling a NoSQL database
+     *  Split a stream into multiple parts 
+     *  Each part is called a **Shard**
+        * A Shard is selected as its the same as DynamoDB
+            * Every record has a key and key is hashed 
+            * Hash is then used to select a shard.
+   * ![Shards](./img/Shards.png)
+
+
+### Elasticsearch
+  * Data in Elasticsearch 
+    * Indexes - like tables in a database
+    * split among multiple shards
+  * Managed service from AWS
+  * Deploys and configures it for us
+    * Can create it with CloudFormation 
+  * Creates two services
+    * **Elasticsearch** - for uploading data and queries 
+    * **Kibana** - UI for Elasticsearch   
+
+   * ![Kibana](./img/kibana_elastic.png)
