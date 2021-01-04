@@ -465,3 +465,30 @@ Creates copy of the data in a table (data is available via GSI after some delay)
 * 
   
   ![Websocket](./img/websocket-commands.png)
+
+
+#
+  ### FULL TEXT SEARCH 
+  * Find images by name
+    * Supports serach by any field 
+    * Tolerates typos 
+    * Support highlight
+    * Rank Search Result
+*
+       DynamoDB doesnt support text search   
+
+
+### Elasticsearch 
+  * It's the most popular full-text search solution 
+    * Open Source
+    * AWS is just Elasticsearch provider
+  * It supports all the features we need 
+    * search by any field 
+    * Highlights - it highlights the matches 
+    * Ranking 
+    * Fuzzy Search 
+
+![two databses](./img/2db.png)
+
+
+### Synchronize DynamoDB and Elasticsearch

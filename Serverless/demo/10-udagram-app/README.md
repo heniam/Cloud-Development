@@ -138,3 +138,99 @@ When DynamoDb puts the data its given it hashes it and puts on the tables.
             Key: 'object-id', // id of an object this URL allows access to
             Expires: '300'  // A URL is only valid for 5 minutes
           })
+
+  
+
+## Processing S3 Events 
+
+**Here is a configuration snippet that can be used to subscribe to S3 events:**
+
+    functions:
+      process:
+        handler: file.handler
+        events:
+          - s3: bucket-name
+            event: s3:ObjectCreated:*
+            rules:
+                - prefix: images/
+                - suffix: .png
+  
+
+- Currrently - There is an issue with Serverless and S3
+  - We create an S3 bucket explicitly in the Resources section 
+  - Tries to create an S3 bucket from event definition 
+  - Will have to connect Lambda and S3 events manually
+    - We can use **serverless-external-s3-event** plugin
+ 
+  ![S3 Event Notification](img/s3_event.png)
+
+  ### Process S3 Notification 
+    * Connect a Lambda fuction to S3 notification 
+  
+
+
+## Implementing WebSocket Notification 
+  * Will notify users when image is uploaded 
+    * it realtime 
+    * Clients wont have to poll data 
+    * Notifications are sent to clients 
+    * Allows bidirection communication 
+    * 
+
+        Websockets work on top of tcp connection. It connects two servers and have a persistent Connection.
+
+      *  ![S3 Event Notification](img/websockets.png)
+
+* WebSocket allows to implement bi-directional communication between a web application and a server. It can be especially useful for applications like: 
+    * Messaging Applications
+    * Real-time Notifications
+    * Real-time Dashboards
+
+
+### WebSocket API provides two URLs: 
+  * **WebSocket URL and Connection URL.**
+
+* ![Websocket ](img/websocket-1.png )
+### WebSocket URL:
+* Clients will use to connect to the API
+* Allows clients to send messages and receive notifications
+
+### Connection URL
+* Send a message back to a connected client
+* Lambda function will use to send messages
+* Requires a connection id to send a message to a particular client
+  * Connection URL supports the following operations:
+    * POST: to send a message to a client
+    * GET: to get the latest connection status
+    * DELETE: to disconnect a client from API
+  * ![Websocket ](img/connection-id.png)
+
+## Special Routes in API GATEWAY 
+  * **$connect** - is an event that is send to a lambda function when a user is connected via websockets. 
+  * **$disconnect** - is an event that is send to a lambda function when a user is disconnected from the websockets. 
+   * **$default** - is an event that is sent when an incoming message doesnt match any route or the user send a non JSON event.
+
+
+   * 
+     ![Websocket ](img/websocket-2.png )
+ 
+
+ **Here is an example of how to react to WebSocket events using Serverless Framework:**
+
+    ConnectHandler:
+        handler: src/websocket/connect.handler
+        events:
+          - websocket:
+              route: $connect
+
+      DisconnectHandler:
+        handler: src/websocket/disconnect.handler
+        events:
+          - websocket:
+              route: $disconnect
+* 
+  
+  ![Websocket](img/websocket-commands.png)
+
+
+  ### FULL TEXT SEARCH 
