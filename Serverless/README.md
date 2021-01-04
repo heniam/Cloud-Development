@@ -372,3 +372,35 @@ Creates copy of the data in a table (data is available via GSI after some delay)
   ![Cloud Formation Reference](./img/CF-REFF.png )
 
 
+#
+
+## Processing S3 Events 
+
+**Here is a configuration snippet that can be used to subscribe to S3 events:**
+
+    functions:
+      process:
+        handler: file.handler
+        events:
+          - s3: bucket-name
+            event: s3:ObjectCreated:*
+            rules:
+                - prefix: images/
+                - suffix: .png
+  
+
+- Currrently - There is an issue with Serverless and S3
+  - We create an S3 bucket explicitly in the Resources section 
+  - Tries to create an S3 bucket from event definition 
+  - Will have to connect Lambda and S3 events manually
+    - We can use **serverless-external-s3-event** plugin
+ 
+  ![S3 Event Notification](./img/s3_event.png )
+
+  ### Process S3 Notification 
+    * Connect a Lambda fuction to S3 notification 
+  
+
+
+## Implementing WebSocket Notification 
+  * Will notify users 
