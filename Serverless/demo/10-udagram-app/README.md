@@ -72,10 +72,10 @@ When DynamoDb puts the data its given it hashes it and puts on the tables.
   * title
   * imageUrl
    
-   ![Image Query DB](./img_1.png )
+   ![Image Query DB](./img/img_1.png )
 
 
-    ![Image](./img_2.png )
+    ![Image](./img/img_2.png )
 
 
 ### Image Upload 
@@ -92,12 +92,12 @@ When DynamoDb puts the data its given it hashes it and puts on the tables.
 
 # File Upload     
 
-![Image](./img_3.png )
+![Image](./img/img_3.png )
 
 
 ## File upload Using EC2 
  * Classical approch would be this following below 
-    ![Image](./img_4.png )
+    ![Image](./img/img_4.png )
     * This traditional approach  
       * Cons - Needs to setup infrastructure for EC2 and this is what serverless is trying to solve in the first place. 
 
@@ -108,7 +108,7 @@ When DynamoDb puts the data its given it hashes it and puts on the tables.
       * Lambda event can be upto 6 MB in size
       * Need to pay for lambda invocation time.
   
-  ![Image](./img_5.png )
+  ![Image](./img/img_5.png )
     
 ## Presigned URL 
 *Presigned URL is a special URL pointing to an S3 bucket that can be used by anyone to upload/read an object. It can be used to access an S3 bucket even if it is private.*
@@ -125,7 +125,7 @@ When DynamoDb puts the data its given it hashes it and puts on the tables.
   * Pros - This is the serverless approach 
     * No need to manage our infrastructure 
     * No need to process file uploads
-  ![Image](./img_6.png )
+  ![Image](./img/img_6.png )
     
 
 **Here is a code snippet that can be used to generate a presigned URL:**
