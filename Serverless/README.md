@@ -535,3 +535,8 @@ Creates copy of the data in a table (data is available via GSI after some delay)
     * **Kibana** - UI for Elasticsearch   
 
    * ![Kibana](./img/kibana_elastic.png)
+
+
+    AWS provides multiple ways to restrict access to a Kibana dashboard. 
+      
+    One option to restrict access to Kibana would be to use Amazon Cognito, a service for authentication, authorization, and user management.
