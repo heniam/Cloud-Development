@@ -143,13 +143,11 @@ functions:
       API_ID:
         Ref: WebsocketsApi
     handler: src/lambda/s3/sendNotifications.handler
-
   ConnectHandler:
     handler: src/lambda/websocket/connect.handler
     events:
       - websocket:
           route: $connect
-
   DisconnectHandler:
     handler: src/lambda/websocket/disconnect.handler
     events:
@@ -157,6 +155,8 @@ functions:
           route: $disconnect
 
   SyncWithElasticsearch:
+    environment:
+      ES_ENDPOINT: !GetAtt ImagesSearch.DomainEndpoint
     handler: src/lambda/dynamoDb/elasticSearchSync.handler
     events:
       - stream:
@@ -224,7 +224,6 @@ resources:
           Ref: ApiGatewayRestApi
         ValidateRequestBody: true
         ValidateRequestParameters: false
-    
     AttachmentsBucket:
       Type: AWS::S3::Bucket
       Properties:
@@ -246,8 +245,6 @@ resources:
                 - DELETE
                 - HEAD
               MaxAge: 3000
-   
-        
     SendUploadNotificationsPermission:
       Type: AWS::Lambda::Permission
       Properties:
@@ -256,20 +253,19 @@ resources:
         Action: lambda:InvokeFunction
         SourceAccount: !Ref AWS::AccountId
         SourceArn: arn:aws:s3:::${self:provider.environment.IMAGES_S3_BUCKET}
-
     BucketPolicy:
       Type: AWS::S3::BucketPolicy
       Properties:
         PolicyDocument:
           Id: MyPolicy
-          Version: "2012-10-17"
+          Version: '2012-10-17'
           Statement:
             - Sid: PublicReadForGetBucketObjects
               Effect: Allow
               Principal: '*'
               Action: 's3:GetObject'
               Resource: 'arn:aws:s3:::${self:provider.environment.IMAGES_S3_BUCKET}/*'
-        Bucket: !Ref AttachmentsBucket
+          Bucket: !Ref AttachmentsBucket
 
     ImagesSearch:
       Type: AWS::Elasticsearch::Domain
@@ -286,12 +282,14 @@ resources:
           Iops: 0
           VolumeSize: 10
           VolumeType: 'gp2'
-
         AccessPolicies:
           Version: '2012-10-17'
           Statement:
-            - Effect: Allow
+            - 
+              Effect: Allow 
+              Action: 'es:ESHttp*'         
               Principal:
-                AWS: '*'
-              Action: 'es:*'
-              Resource: '*'
+                AWS: !Sub 'arn:aws:iam::985214855586:user/serverless'
+              Resource: !Sub 'arn:aws:es:${self:provider.region}:${AWS::AccountId}:domain/images-search-${self:provider.stage}/*'
+
+       
