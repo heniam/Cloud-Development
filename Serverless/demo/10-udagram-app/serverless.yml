@@ -1,5 +1,5 @@
 service:
-  name: service-10-udagram-app
+  name: heniam-serverless-udagram-app
 # app and org for use with dashboard.serverless.com
 #app: your-app-name
 #org: your-org-name
@@ -265,7 +265,12 @@ resources:
               Principal: '*'
               Action: 's3:GetObject'
               Resource: 'arn:aws:s3:::${self:provider.environment.IMAGES_S3_BUCKET}/*'
-          Bucket: !Ref AttachmentsBucket
+            - Sid: PublicReadForPutBucketObjects
+              Effect: Allow
+              Principal: '*'
+              Action: 's3:PutObject'
+              Resource: 'arn:aws:s3:::${self:provider.environment.IMAGES_S3_BUCKET}/*'
+        Bucket: !Ref AttachmentsBucket
 
     ImagesSearch:
       Type: AWS::Elasticsearch::Domain
@@ -282,14 +287,15 @@ resources:
           Iops: 0
           VolumeSize: 10
           VolumeType: 'gp2'
+
         AccessPolicies:
           Version: '2012-10-17'
           Statement:
             - 
               Effect: Allow 
-              Action: 'es:ESHttp*'         
               Principal:
-                AWS: !Sub 'arn:aws:iam::985214855586:user/serverless'
-              Resource: !Sub 'arn:aws:es:${self:provider.region}:${AWS::AccountId}:domain/images-search-${self:provider.stage}/*'
+                AWS: 'arn:aws:iam::985214855586:user/serverless'
+              Action: 'es:ESHttp*'         
+              Resource: 'arn:aws:es:${self:provider.region}:${AWS::AccountId}:domain/images-search-${self:provider.stage}/*'
 
        
