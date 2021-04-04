@@ -540,3 +540,28 @@ Creates copy of the data in a table (data is available via GSI after some delay)
     AWS provides multiple ways to restrict access to a Kibana dashboard. 
       
     One option to restrict access to Kibana would be to use Amazon Cognito, a service for authentication, authorization, and user management.
+
+#
+* Here is how to create an Elasticsearch client:
+
+      import * as elasticsearch from 'elasticsearch'
+      import * as httpAwsEs from 'http-aws-es'
+
+      const esHost = process.env.ES_ENDPOINT
+
+      const es = new elasticsearch.Client({
+        hosts: [ esHost ],
+        connectionClass: httpAwsEs
+      })
+
+* Here is how to store a document in Elasticsearch
+
+      await es.index({
+        index: 'images-index',
+        type: 'images',
+        id: 'id', // Document ID
+        body: {  // Document to store
+          title: 'title',
+          imageUrl: 'https://example.com/image.png'
+        }
+      })
