@@ -33,7 +33,7 @@
     "typescript": "^3.5.3"
   },
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "lodash": "^4.17.21",
     "mkdirp": "^1.0.4",
     "node-notifier": "^10.0.0",
